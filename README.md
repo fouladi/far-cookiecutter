@@ -14,11 +14,13 @@
 python3 -m pip install pipx
 python3 -m pipx ensurepath
 
-# Install pipenv using pipx
-pipx install pipenv
+# Install cookiecutter using pipx
+pipx install cookiecutter
 
 # Use cookiecutter to create project from this template
 cookiecutter gh:fouladi/far-cookiecutter
+
+# Or
 
 pipx run cookiecutter far-cookiecutter
 
