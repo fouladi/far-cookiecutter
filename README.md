@@ -18,6 +18,8 @@ python3 -m pipx ensurepath
 pipx install pipenv
 
 # Use cookiecutter to create project from this template
+cookiecutter gh:fouladi/far-cookiecutter
+
 pipx run cookiecutter far-cookiecutter
 
 # Enter project directory
