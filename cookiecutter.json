@@ -1,0 +1,4 @@
+{
+  "project_name": "Far Project",
+  "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
+}
