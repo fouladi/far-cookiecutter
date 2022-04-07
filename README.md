@@ -1,5 +1,6 @@
-# far-cookiecutter
-A python project template for "cookiecutter"
+# Python far Cookiecutter
+
+`far` template
 
 ## Features
 - Testing with [pytest](https://docs.pytest.org/en/latest/)

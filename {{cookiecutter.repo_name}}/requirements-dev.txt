@@ -1,0 +1,6 @@
+flake8
+yapf
+isort
+pytest
+pytest-cov
+-r requirements.txt
