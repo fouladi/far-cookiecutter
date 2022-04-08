@@ -1,3 +1,5 @@
+# packages installed in 'dev' that you do not want installed in your
+# 'production' environment
 flake8
 yapf
 isort
