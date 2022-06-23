@@ -11,7 +11,7 @@ def main():
     elif argpars.command == 'version':
         print(_version)
     else:
-        print("\t\tUsage: python -m {{cookiecutter.repo_name}} -h\n")
+        print("\t\tUsage: run_{{cookiecutter.repo_name}}.sh -h\n")
 
 if __name__ == "__main__":
     main()
