@@ -3,7 +3,7 @@ from {{cookiecutter.repo_name}}.util import log
 from . import __version__ as _version
 from .util import argpars, log
 
-if __name__ == "__main__":
+def main():
     log.info(f"... Start with version: {_version}")
     if argpars.command == 'feb':
         n = int(argpars.number)
@@ -12,3 +12,6 @@ if __name__ == "__main__":
         print(_version)
     else:
         print("\t\tUsage: python -m {{cookiecutter.repo_name}} -h\n")
+
+if __name__ == "__main__":
+    main()
