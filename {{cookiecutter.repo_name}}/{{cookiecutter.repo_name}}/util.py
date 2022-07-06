@@ -1,17 +1,15 @@
-"""utilities for logging
-"""
+"""utilities for logging and parameters setup"""
 import logging
 from argparse import ArgumentParser, RawTextHelpFormatter
 from logging.handlers import RotatingFileHandler
 
 
 def log_setup(fname, logger):
-    """logging setup for a rotating logger in 'log/' directory
+    """Logging setup for a rotating logger in 'log/' directory
 
-    Parameters
-    ----------
-    fname : name of log file
-    logger : name of logger
+    Arguments:
+    fname   : name of log file
+    logger  : name of logger
     """
 
     filename = "log/" + fname
@@ -26,8 +24,7 @@ def log_setup(fname, logger):
 
 
 def arg_setup():
-    """parsing of all input arguments
-    """
+    """Parse all input arguments."""
 
     pars = ArgumentParser('{{cookiecutter.repo_name}}.py',
                           usage='%(prog)s  {version} [options]',
@@ -35,6 +32,7 @@ def arg_setup():
                           description="""
         Usage Examples:
         ---------------
+            run_{{cookiecutter.repo_name}}.sh feb --number 5
             """)
     subparsers = pars.add_subparsers(dest='command')
 
