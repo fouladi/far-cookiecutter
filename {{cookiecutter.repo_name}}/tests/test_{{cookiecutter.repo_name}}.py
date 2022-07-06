@@ -1,4 +1,4 @@
-from {{cookiecutter.repo_name}}.{{cookiecutter.repo_name}} import fib
+from {{cookiecutter.repo_name}}.__main__ import fib
 
 
 def test_fib() -> None:

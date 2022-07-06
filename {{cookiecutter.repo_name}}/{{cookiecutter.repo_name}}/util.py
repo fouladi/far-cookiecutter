@@ -1,4 +1,4 @@
-"""utilities for logging and parameters setup"""
+"""Utilities for logging and parameters setup"""
 import logging
 from argparse import ArgumentParser, RawTextHelpFormatter
 from logging.handlers import RotatingFileHandler
