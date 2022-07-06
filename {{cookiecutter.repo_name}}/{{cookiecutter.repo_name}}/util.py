@@ -36,13 +36,13 @@ def arg_setup():
                           description="""
         Usage Examples:
         ---------------
-            run_{{cookiecutter.repo_name}}.sh feb --number 5
+            run_{{cookiecutter.repo_name}}.sh fib --number 5
             """)
     subparsers = pars.add_subparsers(dest='command')
 
     _ = subparsers.add_parser('version', help='Version')
-    feb_parser = subparsers.add_parser('feb', help='Version')
-    feb_parser.add_argument('-n',
+    fib_parser = subparsers.add_parser('fib', help='Version')
+    fib_parser.add_argument('-n',
                             '--number',
                             help='Calculate Fibonnaci Number',
                             required=True)

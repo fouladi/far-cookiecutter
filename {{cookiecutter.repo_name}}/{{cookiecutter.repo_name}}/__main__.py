@@ -12,7 +12,7 @@ def fib(n: int) -> int:
 
 def main():
     log.info(f"... Start with version: {_version}")
-    if argpars.command == 'feb':
+    if argpars.command == 'fib':
         n = int(argpars.number)
         print(fib(n))
     elif argpars.command == 'version':

@@ -16,11 +16,11 @@ pip install  -r requirements-dev.txt
 ## Start Program
 
 ```sh
-./run_{{cookiecutter.repo_name}}.sh feb -n 23
+./run_{{cookiecutter.repo_name}}.sh fib -n 23
 
 # Or if you want to run with Python directly:
 
-python -m {{cookiecutter.repo_name}} feb -n 23
+python -m {{cookiecutter.repo_name}} fib -n 23
 ```
 
 ## Start Unit Tests
