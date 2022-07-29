@@ -5,11 +5,14 @@ from logging.handlers import RotatingFileHandler
 
 
 def log_setup(fname, logger):
-    """Logging setup for a rotating logger in 'log/' directory
+    """logging setup for a rotating logger in 'log/' directory
 
-    Arguments:
-    fname   : name of log file
-    logger  : name of logger
+    Args:
+        fname:  name of log file
+        logger: name of logger
+
+    Returns:
+        configured logger
     """
 
     filename = "log/" + fname
@@ -20,8 +23,8 @@ def log_setup(fname, logger):
                                   maxBytes=50 * 1024 * 1024,
                                   backupCount=10)
     formatter = logging.Formatter(
-        '%(asctime)s - %(name)s - %(levelname)s - %(message)s [%(module)s:%(funcName)s:%(lineno)d] %(threadName)s'
-    )
+        '%(asctime)s.%(msecs)03d - %(name)s - %(levelname)s - %(message)s [%(module)s:%(funcName)s:%(lineno)d] %(threadName)s',
+        '%Y-%m-%d %H:%M:%S')
     handler.setFormatter(formatter)
     _log.addHandler(handler)
     return _log
