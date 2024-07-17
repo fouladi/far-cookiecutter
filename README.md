@@ -1,20 +1,29 @@
 # Python far Cookiecutter
 
-This Cookiecutter template creates Python projects from project
+This Cookiecutter template creates Python projects from the project
 templates.
 
 ## Features
-- Supports Python 3.7 and higher.
-- Testing with [pytest](https://docs.pytest.org/en/latest/)
-- Formatting with [yapf](https://github.com/google/yapf)
-- Import sorting with [isort](https://github.com/timothycrosley/isort)
-- Linting with [flake8](http://flake8.pycqa.org/en/latest/)
+
+* Supports `Python 3.7` and higher.
+* Testing with [pytest](https://docs.pytest.org/en/latest/)
+* Formatting with [yapf](https://github.com/google/yapf)
+* Import sorting with [isort](https://github.com/timothycrosley/isort)
+* Linting with [flake8](http://flake8.pycqa.org/en/latest/)
+
+## Prerequisites
+
+* Create projects swiftly from cookiecutters [cookiecutter](https://github.com/cookiecutter/cookiecutter)
 
 ## How to use it
+
+Here you have to install first of all the `cookiecutter`. The following
+steps are necessary:
+
 ```sh
 # Install pipx if pipenv and cookiecutter are not installed
-python3 -m pip install pipx
-python3 -m pipx ensurepath
+python -m pip install pipx
+python -m pipx ensurepath
 
 # Install cookiecutter using pipx
 pipx install cookiecutter
