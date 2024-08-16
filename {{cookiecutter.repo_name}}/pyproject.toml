@@ -1,0 +1,44 @@
+[project]
+name = "{{cookiecutter.repo_name}}"
+version = "1.0.0"
+authors = [{ name = "{{cookiecutter.author}}", email = "{{cookiecutter.email}}" }]
+license = "{{cookiecutter.author}}"  # TODO: your application License
+requires-python = "3.12"  # TODO: Python version you are using
+description = "{{cookiecutter.description}}"
+readme = "README.md"
+
+[project.urls]
+"Homepage" = "https://gitlab.local.wmgruppe.de/{{cookiecutter.repo_name}}"  # TODO: link to your repo
+
+[tool.ruff]
+line-length = 120
+fix = false
+show-fixes = true
+target-version = 'py37' # the python version to target, useful when using pyupgrade - default "py310"
+
+[tool.ruff.lint]
+# E: pycodestyle error, F: pyflakes are 'select'ed by default
+extend-select = [
+    "W",  # pycodestyle warning
+    "I",  # isort
+    "UP", # pyupgrade
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+
+[tool.coverage.run]
+source = ["tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",   # Have to re-enable the standard pragma
+  "def __repr__",
+  "def __str__",
+  # Don't complain if tests don't hit defensive assertion code:
+  "raise AssertionError",
+  "raise NotImplementedError",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+  "if typing.TYPE_CHECKING:"
+]
