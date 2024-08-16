@@ -1,16 +1,29 @@
-# http://editorconfig.org/#file-format-details
+# top-most EditorConfig file
 root = true
 
+# Unix-style newlines with a newline ending every file
 [*]
-charset = utf-8
 end_of_line = lf
-indent_size = 4
-indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
+charset = utf-8
 
-[*.md]
-trim_trailing_whitespace = false
+# 4 space indentation
+[*.py]
+indent_style = space
+indent_size = 4
 
-[Makefile]
-indent_style = tab
+[*.sh]
+indent_style = space
+indent_size = 4
+
+shell_variant      = bash
+binary_next_line   = true
+switch_case_indent = true
+space_redirects    = true
+keep_padding       = true
+function_next_line = false
+
+# Ignore the entire "third_party" directory.
+[third_party/**]
+ignore = true
