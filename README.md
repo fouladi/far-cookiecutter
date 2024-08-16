@@ -7,9 +7,7 @@ templates.
 
 * Supports `Python 3.7` and higher.
 * Testing with [pytest](https://docs.pytest.org/en/latest/)
-* Formatting with [yapf](https://github.com/google/yapf)
-* Import sorting with [isort](https://github.com/timothycrosley/isort)
-* Linting with [flake8](http://flake8.pycqa.org/en/latest/)
+* Formatting and Linting with [ruff](https://github.com/astral-sh/ruff)
 
 ## Prerequisites
 
