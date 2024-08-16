@@ -1,4 +1,7 @@
 {
   "project_name": "Far Project",
-  "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
+  "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "author": "John Doe",
+  "email": "j.doe@somwhere.com",
+  "description": "A nice project for everyday life."
 }

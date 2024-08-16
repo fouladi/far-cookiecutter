@@ -1,5 +1,7 @@
 # {{cookiecutter.project_name}}
 
+# {{cookiecutter.description}}
+
 ## Setup
 
 ```sh
