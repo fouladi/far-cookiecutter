@@ -1,4 +1,3 @@
-from {{cookiecutter.repo_name}}.util import log
 from . import __version__ as _version
 from .util import argpars, log
 

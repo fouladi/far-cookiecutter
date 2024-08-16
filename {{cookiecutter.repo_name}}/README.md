@@ -30,7 +30,3 @@ python -m {{cookiecutter.repo_name}} fib -n 23
 ```sh
 pytest
 ```
-
-## Credits
-
-* Farhad Fouladi
