@@ -9,7 +9,7 @@ def fib(n: int) -> int:
         return fib(n - 1) + fib(n - 2)
 
 
-def main():
+def main() -> None:
     log.info(f"... Start with version: {_version}")
     if argpars.command == 'fib':
         n = int(argpars.number)

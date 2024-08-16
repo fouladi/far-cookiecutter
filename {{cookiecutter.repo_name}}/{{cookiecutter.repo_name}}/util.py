@@ -5,15 +5,19 @@ from argparse import ArgumentParser, RawTextHelpFormatter
 from logging.handlers import RotatingFileHandler
 
 
-def log_setup(fname, logger):
-    """logging setup for a rotating logger in 'log/' directory
+def log_setup(fname: str, logger: str) -> logging.Logger:
+    """log_setup - logging setup for a rotating logger in 'log/' directory
 
-    Args:
-        fname:  name of log file
+    Parameters
+    ----------
+    fname : str
+        fname: name of log file in 'log/' directory
+    logger : str
         logger: name of logger
 
-    Returns:
-        configured logger
+    Returns
+    -------
+    logging.Logger
     """
 
     filename = "log/" + fname
