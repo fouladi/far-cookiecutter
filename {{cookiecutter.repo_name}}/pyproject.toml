@@ -28,7 +28,7 @@ extend-select = [
 combine-as-imports = true
 
 [tool.coverage.run]
-source = ["tests"]
+source = ["{{cookiecutter.repo_name}}"]
 
 [tool.coverage.report]
 exclude_lines = [
