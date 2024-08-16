@@ -1,6 +1,6 @@
 # {{cookiecutter.project_name}}
 
-# {{cookiecutter.description}}
+{{cookiecutter.description}}
 
 ## Setup
 

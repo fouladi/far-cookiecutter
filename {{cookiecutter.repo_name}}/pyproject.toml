@@ -3,7 +3,7 @@ name = "{{cookiecutter.repo_name}}"
 version = "1.0.0"
 authors = [{ name = "{{cookiecutter.author}}", email = "{{cookiecutter.email}}" }]
 license = "{{cookiecutter.author}}"  # TODO: your application License
-requires-python = "3.12"  # TODO: Python version you are using
+requires-python = ">=3.12"  # TODO: Python version you are using
 description = "{{cookiecutter.description}}"
 readme = "README.md"
 
