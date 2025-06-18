@@ -13,7 +13,18 @@ templates.
 
 * Create projects swiftly from cookiecutters [cookiecutter](https://github.com/cookiecutter/cookiecutter)
 
-## How to use it
+## Install and run `far-cookiecutter`
+
+### Option 1: Using `uv`
+
+Navigate to the directory on your local machine in which you want to
+create a project directory, and then run the following command:
+
+```sh
+uvx cookiecutter https://github.com/fouladi/far-cookiecutter
+```
+
+### Option 2: Using `pipx`
 
 Here you have to install first of all the `cookiecutter`. The following
 steps are necessary:
@@ -32,16 +43,33 @@ cookiecutter gh:fouladi/far-cookiecutter
 # Or
 
 pipx run cookiecutter far-cookiecutter
+```
 
-# Enter project directory
+## How to use it
+
+Follow the on-screen prompts to configure your project. Once you have
+finished, a new directory containing your project will be created.
+
+* Enter project directory
+
+```sh
 cd <repo_name>
+```
 
-# Initialise git repo
+* Initialise git repo
+
+```sh
 git init
+```
 
-# Creating Virtual Environments with pyenv
+* Creating Virtual Environments with `pyenv`
+
+```sh
 pyenv virtualenv <python-version> <repo_name>
+```
 
-# Install requirements
+* Install requirements
+
+```sh
 pip install  -r requirements-dev.txt
 ```
