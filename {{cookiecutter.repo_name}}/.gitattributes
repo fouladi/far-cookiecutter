@@ -1,0 +1,20 @@
+# Set default behavior to automatically normalize line endings with Unix
+# based line ending: LF.
+* text=auto eol=lf
+
+# Explicitly declare text files you want to always be normalized and
+# converted to native line endings on checkout.
+*.py text diff=python
+*.md text diff=markdown
+*.txt text
+*.adoc text
+*.sql text
+*.sh text
+
+# Declare image files - these are usually not converted to text.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.svg text
