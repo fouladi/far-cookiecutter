@@ -17,8 +17,9 @@ templates.
 
 ### Option 1: Using `uv`
 
-Navigate to the directory on your local machine in which you want to
-create a project directory, and then run the following command:
+After installing [uv](https://github.com/astral-sh/uv), navigate to the
+directory on your local machine in which you want to create a project
+directory, and then run the following command:
 
 ```sh
 uvx cookiecutter https://github.com/fouladi/far-cookiecutter
