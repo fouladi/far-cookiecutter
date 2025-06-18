@@ -1,10 +1,11 @@
 # packages installed in 'dev' that you do not want installed in your
 # 'production' environment
 toml
-pytest
-pytest-cov
 ruff
 ruff-lsp
 pynvim
 doq
+pytest
+pytest-cov
+pre-commit
 -r requirements.txt
