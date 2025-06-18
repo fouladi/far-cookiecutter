@@ -8,7 +8,7 @@ description = "{{cookiecutter.description}}"
 readme = "README.md"
 
 [project.urls]
-"Homepage" = "https://gitlab.local.wmgruppe.de/{{cookiecutter.repo_name}}"  # TODO: link to your repo
+"Homepage" = "https://github.com/{{cookiecutter.repo_name}}"  # TODO: link to your repo
 
 [tool.ruff]
 line-length = 120
