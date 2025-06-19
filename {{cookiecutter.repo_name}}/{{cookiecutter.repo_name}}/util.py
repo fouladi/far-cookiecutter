@@ -1,41 +1,58 @@
 """Utilities for logging and parameters setup"""
 
 import logging
-from argparse import ArgumentParser, RawTextHelpFormatter
+from argparse import ArgumentParser, Namespace, RawTextHelpFormatter
+from logging import Logger
 from logging.handlers import RotatingFileHandler
+from pathlib import Path
+
+LOG_DIR = Path("log")
 
 
-def log_setup(fname: str, logger: str) -> logging.Logger:
-    """log_setup - logging setup for a rotating logger in 'log/' directory
+def log_setup(fname: str, logger_name: str) -> Logger:
+    """Set up and return a configured logger with a rotating file
+    handler.
 
-    Parameters
-    ----------
-    fname : str
-        fname: name of log file in 'log/' directory
-    logger : str
-        logger: name of logger
+    Args:
+        fname (str): The name of the log file (e.g., 'app.log').
+        logger_name (str): The name of the logger instance.
 
-    Returns
-    -------
-    logging.Logger
+    Returns:
+        Logger: A logger instance configured with a rotating file handler and formatter.
     """
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-    filename = "log/" + fname
-    _log = logging.getLogger(logger)
-    _log.setLevel(logging.INFO)
-    handler = RotatingFileHandler(filename, mode="a", maxBytes=50 * 1024 * 1024, backupCount=10)
+    log_path = LOG_DIR / fname
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(logging.INFO)
+
+    handler = RotatingFileHandler(
+        filename=log_path,
+        mode="a",
+        maxBytes=50 * 1024 * 1024,
+        backupCount=10,
+        encoding="utf-8",
+    )
+
     formatter = logging.Formatter(
-        "%(asctime)s.%(msecs)03d - %(name)s - %(levelname)s - %(message)s [%(module)s:%(funcName)s:%(lineno)d] %(threadName)s",
-        "%Y-%m-%d %H:%M:%S",
+        fmt=(
+            "%(asctime)s.%(msecs)03d - %(name)s - %(levelname)s - %(message)s "
+            "[%(module)s:%(funcName)s:%(lineno)d] %(threadName)s"
+        ),
+        datefmt="%Y-%m-%d %H:%M:%S",
     )
     handler.setFormatter(formatter)
-    _log.addHandler(handler)
-    return _log
+    logger.addHandler(handler)
+
+    return logger
 
 
-def arg_setup():
-    """Parse all input arguments."""
+def arg_setup() -> Namespace:
+    """Set up and parse command-line arguments using argparse.
 
+    Returns:
+        argparse.Namespace: The parsed arguments as a Namespace object.
+    """
     pars = ArgumentParser(
         "{{cookiecutter.repo_name}}.py",
         usage="%(prog)s  {version} [options]",
@@ -44,13 +61,16 @@ def arg_setup():
         Usage Examples:
         ---------------
             run_{{cookiecutter.repo_name}}.sh fib --number 5
-            """,
+        """,
     )
+
     subparsers = pars.add_subparsers(dest="command")
 
-    _ = subparsers.add_parser("version", help="Version")
-    fib_parser = subparsers.add_parser("fib", help="Version")
-    fib_parser.add_argument("-n", "--number", help="Calculate Fibonnaci Number", required=True)
+    subparsers.add_parser("version", help="Display version information")
+
+    fib_parser = subparsers.add_parser("fib", help="Calculate Fibonacci number")
+    fib_parser.add_argument("-n", "--number", help="Calculate Fibonacci number", required=True)
+
     return pars.parse_args()
 
 
