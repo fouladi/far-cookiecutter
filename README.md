@@ -73,10 +73,12 @@ pyenv virtualenv <python-version> <repo_name>
 
 ```sh
 pip install  -r requirements-dev.txt
+pip install  -r requirements.txt
 ```
 
 * Optional: activate git-hook scripts
 
 ```sh
-pre-commit install
+prek install
+prek run
 ```
