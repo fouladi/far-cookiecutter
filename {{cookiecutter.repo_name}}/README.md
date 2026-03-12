@@ -11,8 +11,10 @@ git init
 # Creating Virtual Environments with pyenv
 pyenv virtualenv <python-version> {{cookiecutter.repo_name}}
 
-# Install requirements
+# Install requirements for development
 pip install  -r requirements-dev.txt
+# Install main requirements
+pip install  -r requirements.txt
 ```
 
 ## Start Program

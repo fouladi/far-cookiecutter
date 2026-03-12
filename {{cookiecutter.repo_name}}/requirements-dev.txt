@@ -2,10 +2,10 @@
 # 'production' environment
 toml
 ruff
-ruff-lsp
+ty
 pynvim
 doq
 pytest
 pytest-cov
-pre-commit
--r requirements.txt
+pytest-mock
+prek
