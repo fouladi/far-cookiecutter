@@ -8,27 +8,48 @@
 # Initialise git repo
 git init
 
-# Creating Virtual Environments with pyenv
-pyenv virtualenv <python-version> {{cookiecutter.repo_name}}
+# Create and activate a virtual environment (example using pyenv)
+pyenv virtualenv {{cookiecutter.python_version}} {{cookiecutter.repo_name}}
+pyenv activate {{cookiecutter.repo_name}}
 
-# Install requirements for development
-pip install  -r requirements-dev.txt
-# Install main requirements
-pip install  -r requirements.txt
+# Install all dependencies (runtime + dev) using uv
+uv sync --group dev
+
+# Or, without uv, install manually
+pip install -r requirements.txt
+pip install ruff ty pytest pytest-cov pytest-mock prek
 ```
 
-## Start Program
+## Run
 
 ```sh
 ./run_{{cookiecutter.repo_name}}.sh fib -n 23
 
-# Or if you want to run with Python directly:
-
+# Or run directly with Python:
 python -m {{cookiecutter.repo_name}} fib -n 23
 ```
 
-## Start Unit Tests
+## Test
 
 ```sh
 pytest
+
+# With coverage:
+pytest --cov
+```
+
+## Lint & Format
+
+```sh
+ruff check .
+ruff format .
+```
+
+## Git Hooks (optional)
+
+[prek](https://github.com/fouladi/prek) wraps pre-commit for a simpler workflow:
+
+```sh
+prek install
+prek run
 ```

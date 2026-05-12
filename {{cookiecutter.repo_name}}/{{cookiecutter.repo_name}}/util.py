@@ -1,4 +1,4 @@
-"""Utilities for logging and parameters setup"""
+"""Utilities for logging and argument parsing setup."""
 
 import logging
 from argparse import ArgumentParser, Namespace, RawTextHelpFormatter
@@ -10,8 +10,7 @@ LOG_DIR = Path("log")
 
 
 def log_setup(fname: str, logger_name: str) -> Logger:
-    """Set up and return a configured logger with a rotating file
-    handler.
+    """Set up and return a configured logger with a rotating file handler.
 
     Args:
         fname (str): The name of the log file (e.g., 'app.log').
@@ -47,15 +46,20 @@ def log_setup(fname: str, logger_name: str) -> Logger:
     return logger
 
 
-def arg_setup() -> Namespace:
+def arg_setup(argv: list[str] | None = None) -> Namespace:
     """Set up and parse command-line arguments using argparse.
+
+    Args:
+        argv (list[str] | None): Argument list to parse. Defaults to sys.argv
+            when None, which is the standard behaviour for CLI use. Pass an
+            explicit list in tests to avoid reading pytest's own argv.
 
     Returns:
         argparse.Namespace: The parsed arguments as a Namespace object.
     """
     pars = ArgumentParser(
         "{{cookiecutter.repo_name}}.py",
-        usage="%(prog)s  {version} [options]",
+        usage="%(prog)s {version} [options]",
         formatter_class=RawTextHelpFormatter,
         description="""
         Usage Examples:
@@ -69,10 +73,11 @@ def arg_setup() -> Namespace:
     subparsers.add_parser("version", help="Display version information")
 
     fib_parser = subparsers.add_parser("fib", help="Calculate Fibonacci number")
-    fib_parser.add_argument("-n", "--number", help="Calculate Fibonacci number", required=True)
+    fib_parser.add_argument("-n", "--number", type=int, help="Calculate Fibonacci number", required=True)
 
-    return pars.parse_args()
+    return pars.parse_args(argv)
 
 
-log = log_setup("{{cookiecutter.repo_name}}.log", "{{cookiecutter.repo_name}}")
-argpars = arg_setup()
+def get_logger() -> Logger:
+    """Return the application logger, creating it on first call."""
+    return log_setup("{{cookiecutter.repo_name}}.log", "{{cookiecutter.repo_name}}")

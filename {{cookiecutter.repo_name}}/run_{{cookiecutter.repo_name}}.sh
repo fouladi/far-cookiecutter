@@ -1,7 +1,7 @@
 #! /bin/bash
 # Description: Wrapper script for '{{cookiecutter.repo_name}}'
 # application. See help with -h
-SCRIPT_DIR=$(cd $(dirname $0) && pwd)
+SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 cd "$SCRIPT_DIR" || exit
 
 if ! python -m {{cookiecutter.repo_name}} "$@"; then

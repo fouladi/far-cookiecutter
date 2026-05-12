@@ -1,4 +1,4 @@
 "authorship information"
 
-__version__ = "1.0.0"
+__version__ = "{{cookiecutter.version}}"
 __author__ = "{{cookiecutter.author}}"

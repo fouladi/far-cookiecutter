@@ -1,11 +1,6 @@
-# packages installed in 'dev' that you do not want installed in your
-# 'production' environment
-toml
-ruff
-ty
-pynvim
-doq
-pytest
-pytest-cov
-pytest-mock
-prek
+# Dev dependencies are managed in pyproject.toml under [dependency-groups].
+# Install them with:
+#   uv sync --group dev
+#
+# If you are not using uv, you can install them manually:
+#   pip install ruff ty pytest pytest-cov pytest-mock prek

@@ -1,20 +1,30 @@
 [project]
 name = "{{cookiecutter.repo_name}}"
-version = "1.0.0"
+version = "{{cookiecutter.version}}"
 authors = [{ name = "{{cookiecutter.author}}", email = "{{cookiecutter.email}}" }]
-license = "{{cookiecutter.author}}"  # TODO: your application License
-requires-python = ">=3.12"  # TODO: Python version you are using
+license = "{{cookiecutter.license}}"
+requires-python = ">={{cookiecutter.python_version}}"
 description = "{{cookiecutter.description}}"
 readme = "README.md"
 
 [project.urls]
-"Homepage" = "https://github.com/{{cookiecutter.repo_name}}"  # TODO: link to your repo
+"Homepage" = "https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.repo_name}}"
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "ty",
+    "pytest",
+    "pytest-cov",
+    "pytest-mock",
+    "prek",
+]
 
 [tool.ruff]
 line-length = 120
 fix = false
 show-fixes = true
-target-version = 'py37' # the python version to target, useful when using pyupgrade - default "py310"
+target-version = "py{{cookiecutter.python_version | replace('.', '') | truncate(3, False, '')}}"
 
 [tool.ruff.lint]
 # E: pycodestyle error, F: pyflakes are 'select'ed by default
