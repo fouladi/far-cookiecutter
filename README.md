@@ -56,6 +56,9 @@ cd <repo_name>
 # Initialise git repo
 git init
 
+# Activate virtual environment
+source .venv/bin/activate
+
 # Install dependencies with uv
 uv sync --group dev
 
